@@ -42,11 +42,11 @@ elif [ "$1" == "status" ]; then
 elif [ "$1" == "blink" ] && [ "$2" -gt 0 ]; then
    echo -e "Will blink $2 times"
    n=$2
-   for (( i=1; i<=$n; i++ )) 
+   for (( i=1; i<=n; i++ )) 
    do
 	  echo "1" >> "$LED3_PATH/brightness"
 	  sleep 1
-	  echo "1" >> "$LED3_PATH/brightness"
+	  echo "0" >> "$LED3_PATH/brightness"
 	  sleep 1
    done
 fi
